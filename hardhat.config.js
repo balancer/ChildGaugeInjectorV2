@@ -10,6 +10,7 @@ module.exports = {
             hardhat: {
                 forking: {
                     url: `https://lb.drpc.live/ogrpc?network=${process.env.FORK_NETWORK}&dkey=${process.env.DRPC_KEY}`,
+                    blockNumber: process.env.FORK_BLOCK_NUMBER ? parseInt(process.env.FORK_BLOCK_NUMBER) : undefined,
                 }
             },
             base: {
