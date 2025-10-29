@@ -24,4 +24,5 @@ jobs:
       - name: Hardhat Test (Polygon)
         env:
           FORK_NETWORK: "polygon"
+          FORK_BLOCK_NUMBER: "64000000"
         run: npx hardhat test test/ChildChainGaugeInjectorV2.js

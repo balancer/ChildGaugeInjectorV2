@@ -9,20 +9,21 @@ module.exports = {
         {
             hardhat: {
                 forking: {
-                    url: `https://lb.drpc.org/ogrpc?network=${process.env.FORK_NETWORK}&dkey=${process.env.DRPC_KEY}`,
+                    url: `https://lb.drpc.live/ogrpc?network=${process.env.FORK_NETWORK}&dkey=${process.env.DRPC_KEY}`,
+                    blockNumber: process.env.FORK_BLOCK_NUMBER ? parseInt(process.env.FORK_BLOCK_NUMBER) : undefined,
                 }
             },
             base: {
-                url: `https://lb.drpc.org/ogrpc?network=base&dkey=${process.env.DRPC_KEY}`,
+                url: `https://lb.drpc.live/ogrpc?network=base&dkey=${process.env.DRPC_KEY}`,
                 accounts: [process.env.PRIVATE_KEY],
                 gasPrice: 1000000000,
             },
             polygon: {
-                url: `https://lb.drpc.org/ogrpc?network=polygon&dkey=${process.env.DRPC_KEY}`,
+                url: `https://lb.drpc.live/ogrpc?network=polygon&dkey=${process.env.DRPC_KEY}`,
                 accounts: [process.env.PRIVATE_KEY],
             },
             ethereum: {
-                url: `https://lb.drpc.org/ogrpc?network=ethereum&dkey=${process.env.DRPC_KEY}`,
+                url: `https://lb.drpc.live/ogrpc?network=ethereum&dkey=${process.env.DRPC_KEY}`,
                 accounts: [process.env.PRIVATE_KEY],
             }
         },
