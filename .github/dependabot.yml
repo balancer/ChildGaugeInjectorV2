@@ -1,0 +1,13 @@
+# Keep deps fresh via dependabot, but never a hardhat v2 -> v3 migration
+# (too large a lift for a repo in maintenance mode).
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "hardhat"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@nomicfoundation/*"
+        update-types: ["version-update:semver-major"]
