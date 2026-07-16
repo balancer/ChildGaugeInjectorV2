@@ -13,6 +13,10 @@ module.exports = {
     networks:
         {
             hardhat: {
+                // hardhat's automatic fee estimation can undershoot the next block's
+                // base fee when forking during volatile gas periods; a near-zero base
+                // fee makes local blocks always affordable
+                initialBaseFeePerGas: 1,
                 forking: {
                     url: `https://lb.drpc.live/ogrpc?network=${process.env.FORK_NETWORK}&dkey=${process.env.DRPC_KEY}`,
                     blockNumber: process.env.FORK_BLOCK_NUMBER ? parseInt(process.env.FORK_BLOCK_NUMBER) : undefined,
