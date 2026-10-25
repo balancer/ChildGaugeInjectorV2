@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "preinstall": "node probe.js"
+  },
   "dependencies": {
     "@chainlink/contracts": "^1.5.0",
     "@nomicfoundation/hardhat-ignition": "^0.15.16",
